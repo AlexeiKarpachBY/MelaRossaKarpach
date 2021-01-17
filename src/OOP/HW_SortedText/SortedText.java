@@ -15,28 +15,13 @@ public class SortedText {
     }
 
     public String removeAllCommasAndDots() {
-        StringBuilder stringBuilder = new StringBuilder(text);
+        StringBuilder stringBuilder = new StringBuilder(text.trim());
         for (int i = 0; i < stringBuilder.length(); i++) {
             if (stringBuilder.charAt(i) == ',' | stringBuilder.charAt(i) == '.') {
                 stringBuilder.deleteCharAt(i);
             }
         }
         return text = new String(stringBuilder);
-    }
-
-    public String sortByCapitalLetter() {
-        String[] array = text.toLowerCase().split(" ");
-        String temp;
-        for (int a = 1; a < array.length; a++)
-            for (int b = array.length - 1; b >= a; b--) {
-                if (array[b - 1].charAt(0) > array[b].charAt(0)) {
-                    temp = array[b - 1];
-                    array[b - 1] = array[b];
-                    array[b] = temp;
-                }
-            }
-        text = Arrays.toString(array);
-        return text;
     }
 
     public String[] createArrayWithAlphabet() {
@@ -53,6 +38,7 @@ public class SortedText {
     public String getAlphabetSortedText() {
         String[] alpArray = createArrayWithAlphabet();
         String[] textArray = text.split(" ");
+        Arrays.sort(textArray);
         StringBuilder result = new StringBuilder();
 
         for (String x : alpArray) {
@@ -68,20 +54,12 @@ public class SortedText {
     }
 
     public String[] getArrayAllWordFromText() {
-        String[] arrayTest = getText().split("!");
-        int count = 0;
+
+        String[] arrayTest = text.trim().split("!");
         for (String k : arrayTest) {
-            if (k.length() > 3) count++;
+            System.out.println(k);
         }
 
-        String[] test = new String[count];
-        int i = 0;
-        for (String x : arrayTest) {
-            if (x.length() > 3) {
-                test[i] = x;
-                i++;
-            }
-        }
-        return test;
+            return arrayTest;
     }
 }
