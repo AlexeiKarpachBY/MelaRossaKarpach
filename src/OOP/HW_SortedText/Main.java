@@ -1,3 +1,5 @@
+package OOP.HW_SortedText;
+
 import OOP.HW_SortedText.SortedText;
 
 public class  Main {
@@ -10,12 +12,12 @@ public class  Main {
                 "very large family. She has three sons, one daughter, and many grandsons and granddaughters.The most " +
                 "famous British royal home is Buckingham Palace. But it is not the only one. The Queen and her " +
                 "family have several other castles, official residences and country houses too. Today Buckingham " +
-                "Palace is the best known palace in the world. It stands at  the end of a long boulevard called The " +
+                "Palace is the best known   palace in the world. It stands at  the end of a long boulevard called The " +
                 "Mall and it has 600 rooms on three floors, 400 staff, and 300 clocks. After Queen Elizabeth II, " +
                 "Britain’s next monarch will probably be Prince Charles, the Prince of Wales. He will be King Charles " +
                 "III. Even further in the future his son, Prince William, will become king too. His title will be " +
                 "King William V. The National Anthem is called God save the Queen. But if Prince Charles becomes " +
-                "King, it will be _______ ------ +++++ **** %%%$$$$ God save the King.";
+                "King, it will be _______ ------ +++++ **** %%%$$$$ God save the               King.";
 
 
        SortedText text = new SortedText(story);

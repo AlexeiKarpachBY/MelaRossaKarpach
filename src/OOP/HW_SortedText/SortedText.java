@@ -1,7 +1,7 @@
 package OOP.HW_SortedText;
 
 import java.util.Arrays;
-import java.util.Locale;
+
 
 public class SortedText {
 
@@ -41,6 +41,7 @@ public class SortedText {
         text = new String(stringBuilder).trim();
 
     }
+
     private void removeCounters() {
         StringBuilder stringBuilder = new StringBuilder(text.trim());
         for (int i = 0; i < stringBuilder.length(); i++) {
@@ -50,24 +51,29 @@ public class SortedText {
         }
         text = new String(stringBuilder);
     }
+
     private void getAlphabetSortedText() {
-        String[] alpArray = createArrayWithAlphabet();
+        String[] alphabetArray = createArrayWithAlphabet();
         String[] textArray = text.toLowerCase().split(" ");
         StringBuilder result = new StringBuilder();
         Arrays.sort(textArray);
 
 
-        for (String x : alpArray) {
+        for (String x : alphabetArray) {
             result.append(x);
             for (String s : textArray) {
-                System.out.println(s);
+                if (s.equals("")) {
+                    continue;
+                }
                 if (x.toLowerCase().charAt(0) == s.toLowerCase().charAt(0)) {
-                    result.append(s).append(" ");
+                    result.append(s)
+                            .append(" ");
                 }
             }
         }
         text = new String(result);
     }
+
     private void getArrayAllWordFromText() {
         String[] arrayTest = text.trim().split(" ");
 
@@ -75,7 +81,6 @@ public class SortedText {
         StringBuilder stringBuilder = new StringBuilder();
         int count = 1;
         for (int i = 1; i < arrayTest.length; i++) {
-
             if (arrayTest[i - 1].equals(arrayTest[i])) {
                 count++;
             } else {
