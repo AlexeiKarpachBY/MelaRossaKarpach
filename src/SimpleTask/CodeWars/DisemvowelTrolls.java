@@ -14,8 +14,9 @@ public class DisemvowelTrolls {
     String string = "This website is for losers LOL!";
 
 
+
     public static String disemVowel(String str) {
-        return str.replaceAll("(?i)[aeiou]", "");
+        return str .replaceAll("(?i)[aeiou]" , "");
     }
 
     public static void main(String[] args) {
