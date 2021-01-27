@@ -2,7 +2,7 @@ package OOP.HW_SortedText;
 
 import OOP.HW_SortedText.SortedText;
 
-public class  Main {
+public class Main {
 
     public static void main(String[] args) {
         String story = "Since 1066 there have been forty monarchs in England, thirty-five kings, five queens and " +
@@ -17,10 +17,10 @@ public class  Main {
                 "Britain’s next monarch will probably be Prince Charles, the Prince of Wales. He will be King Charles " +
                 "III. Even further in the future his son, Prince William, will become king too. His title will be " +
                 "King William V. The National Anthem is called God save the Queen. But if Prince Charles becomes " +
-                "King, it will be _______ ------ +++++ **** %%%$$$$ God save the               King.";
+                "King, it will be _______ ------ +++++ **** %%%$$$$ God save the             King.";
 
 
-       SortedText text = new SortedText(story);
+        SortedText text = new SortedText(story);
 
         System.out.println(text.sortText());
 
