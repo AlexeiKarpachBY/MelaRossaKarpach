@@ -1,4 +1,4 @@
-package SimpleTask;
+package SimpleTask.HW_Practice;
 
 public class Fibonacci {
 
