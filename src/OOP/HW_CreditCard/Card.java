@@ -1,5 +1,7 @@
 package OOP.HW_CreditCard;
 
+import OOP.Exceptions.CardExceptions;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -31,7 +33,7 @@ import java.math.RoundingMode;
     public void replenishment(double amountOfMoney) {
         cardBalance = cardBalance.add(new BigDecimal(amountOfMoney));
     }
-    public abstract void withdrawal(double amountOfMoney);
+    public abstract void withdrawal(double amountOfMoney) throws CardExceptions;
 
 
     @Override

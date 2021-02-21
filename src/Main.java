@@ -1,6 +1,5 @@
 
-import OOP.HW_FibonacciAndFactorial.Fibonacci;
-
+import OOP.HW_FibonacciAndFactorial.MathAlgoritmsManager;
 
 
 import java.util.Arrays;
@@ -8,9 +7,8 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        Fibonacci fibonacci = new Fibonacci();
-
-        System.out.println(Arrays.toString(fibonacci.getFibonacciNumbersFor(10)));
+        MathAlgoritmsManager mathAlgoritmsManager = new MathAlgoritmsManager();
+        System.out.println(Arrays.toString(mathAlgoritmsManager.getMathAlgorithm(1, 1, 1)));
 
 
     }

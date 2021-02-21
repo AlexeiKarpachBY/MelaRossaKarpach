@@ -1,5 +1,7 @@
 package OOP.HW_CreditCard;
 
+import OOP.Exceptions.CardExceptions;
+
 import java.math.BigDecimal;
 
 public class DebitCard extends Card {
@@ -12,12 +14,13 @@ public class DebitCard extends Card {
     }
 
     @Override
-    public void withdrawal(double amountOfMoney) {
-        BigDecimal temp = new BigDecimal(amountOfMoney);
-        if (cardBalance.subtract(temp).compareTo(BigDecimal.ZERO) < 0) {
-            System.out.println("There are not enough funds on the card.");
-        } else {
-            cardBalance = cardBalance.subtract(temp);
+    public void withdrawal(double amountOfMoney)throws CardExceptions {
+
+        if (cardBalance.subtract(new BigDecimal(amountOfMoney)).compareTo(BigDecimal.ZERO) < 0) {
+            throw new CardExceptions("There are not enough funds on the card.");
+        }
+        else {
+            cardBalance = cardBalance.subtract(new BigDecimal(amountOfMoney));
         }
     }
 

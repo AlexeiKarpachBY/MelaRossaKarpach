@@ -1,10 +1,14 @@
 package OOP.HW_CreditCard;
 
+import OOP.Exceptions.CardExceptions;
+
 import java.math.BigDecimal;
 
 public class ATM {
 
     protected Card card;
+
+    public ATM() {}
 
     public ATM(Card card) {
         this.card = card;
@@ -23,7 +27,11 @@ public class ATM {
     }
 
     public void withdrawalFromCard(double amountOfMoney) {
-        card.withdrawal(amountOfMoney);
+        try {
+            card.withdrawal(amountOfMoney);
+        } catch (CardExceptions e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
