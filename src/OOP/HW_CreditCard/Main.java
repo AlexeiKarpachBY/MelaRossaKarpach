@@ -8,7 +8,7 @@ public class Main {
         ATM atm = new ATM();
 
         atm.setCard(debitCard);
-        atm.withdrawalFromCard(50);
+        atm.withdrawalFromCard(101);
         atm.setCard(debitCard1);
         atm.withdrawalFromCard(30);
 
