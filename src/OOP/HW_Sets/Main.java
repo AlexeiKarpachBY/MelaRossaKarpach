@@ -15,10 +15,10 @@ public class Main {
         second.add("B");
         second.add("C");
 
-       /* operations.union(first, second);
+        operations.union(first, second);
         System.out.println(first);
 
-        operations.minus(first, second);
+        /*operations.minus(first, second);
         System.out.println(first);
 
         operations.intersection(first, second);

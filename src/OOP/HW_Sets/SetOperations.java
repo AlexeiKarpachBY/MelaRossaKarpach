@@ -5,10 +5,13 @@ import java.util.*;
 
 public class SetOperations {
 
+
+
     public SetOperations() {
     }
 
     public void union(HashSet a, HashSet b) {
+
         a.addAll(b);
     }
 
@@ -20,9 +23,9 @@ public class SetOperations {
         a.retainAll(b);
     }
 
-    public void difference(HashSet a, HashSet b) {
+  /*  public void difference(HashSet a, HashSet b) {
         a.containsAll(b);
-    }
+    }*/
 
 
     public String toString() {
