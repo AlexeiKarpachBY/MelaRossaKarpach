@@ -1,4 +1,10 @@
 package OOP.HW_ValidationSystem;
 
-public interface Validator {
+import OOP.Exceptions.ValidationFailedException;
+
+public interface  Validator<T> {
+
+   Boolean validate(T t) throws ValidationFailedException;
+
+
 }
