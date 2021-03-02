@@ -1,11 +1,12 @@
 package OOP.HW_ValidationSystem;
 
-public class PasswordStatus<T> implements Validator<T>  {
+import OOP.Exceptions.ValidationFailedException;
+
+public class PasswordStatus<T> implements Validator<Integer>  {
 
 
     @Override
-    public Boolean validate(T number) {
-        System.out.println("Password is OK");
-        return false;
+    public Boolean validate(Integer integer) throws ValidationFailedException {
+        return null;
     }
 }
