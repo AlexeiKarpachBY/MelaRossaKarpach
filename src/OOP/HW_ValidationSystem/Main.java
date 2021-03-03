@@ -7,11 +7,18 @@ public class Main {
         factory.addValidationClass("string", new StringValidator());
         factory.addValidationClass(132, new IntegerValidator());
 
+        try {
+            System.out.println(factory.validate(1));
+            System.out.println(factory.validate(12));
+            System.out.println(factory.validate("Hi"));
+            System.out.println(factory.validate("hi"));
+            System.out.println(factory.validate(false));
+            System.out.println(factory.validate('c'));
+        } catch (ValidationFailedException e) {
+            e.printStackTrace();
+        }
 
-        System.out.println(factory.validate(1));
-        System.out.println(factory.validate(12));
-        System.out.println(factory.validate("Hi"));
-        System.out.println(factory.validate("hi"));
+
 
 
     }

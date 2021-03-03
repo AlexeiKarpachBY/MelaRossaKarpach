@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class ValidatorFactory<T> implements Validation<T> {
 
-   private Map<String, ValidatorFactory<T>> validationClasses = new HashMap<String, ValidatorFactory<T>>();
+    private Map<String, ValidatorFactory<T>> validationClasses = new HashMap<String, ValidatorFactory<T>>();
 
     public Set<String> getValidationClasses() {
         return validationClasses.keySet();
@@ -25,10 +25,12 @@ public class ValidatorFactory<T> implements Validation<T> {
     @Override
     public boolean validate(T t) throws ValidationFailedException {
         String key = String.valueOf(t.getClass());
-        ValidatorFactory temp;
+        ValidatorFactory<T> temp = null;
+
         if (validationClasses.containsKey(key)) {
             temp = validationClasses.get(key);
-        }else throw new ValidationFailedException("Wrong value");
+        } else throw new ValidationFailedException("This class is not in the validation system");
+
 
         return temp.validate(t);
     }

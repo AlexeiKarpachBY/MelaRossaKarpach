@@ -4,7 +4,6 @@ public class IntegerValidator<T extends Integer> extends ValidatorFactory<T> imp
 
     @Override
     public boolean validate(Integer integer) {
-
         return (integer>0 && integer<10);
     }
 
