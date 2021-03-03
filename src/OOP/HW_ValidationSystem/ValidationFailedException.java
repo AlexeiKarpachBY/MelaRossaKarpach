@@ -1,4 +1,4 @@
-package OOP.Exceptions;
+package OOP.HW_ValidationSystem;
 
 public class ValidationFailedException extends Exception{
     public ValidationFailedException() {
