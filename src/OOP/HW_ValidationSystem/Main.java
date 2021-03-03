@@ -4,8 +4,13 @@ public class Main {
     public static void main(String[] args) throws ValidationFailedException {
 
         ValidatorFactory factory = new ValidatorFactory();
-        factory.addValidationClass("string", new StringValidator());
         factory.addValidationClass(132, new IntegerValidator());
+        factory.addValidationClass("string", new StringValidator());
+        System.out.println(factory.getValidationClasses());
+        factory.removeValidationClass("string");
+        System.out.println(factory.getValidationClasses());
+        factory.addValidationClass("string", new StringValidator());
+
 
         try {
             System.out.println(factory.validate(1));
@@ -13,7 +18,6 @@ public class Main {
             System.out.println(factory.validate("Hi"));
             System.out.println(factory.validate("hi"));
             System.out.println(factory.validate(false));
-            System.out.println(factory.validate('c'));
         } catch (ValidationFailedException e) {
             e.printStackTrace();
         }
