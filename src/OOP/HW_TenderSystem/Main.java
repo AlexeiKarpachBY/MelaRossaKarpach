@@ -30,15 +30,16 @@ public class Main {
         titan.addWorkerToBrigade(titan3);
 
 
-        Tender library = new Tender(1500);
+        Tender library = new Tender();
         library.addProfessionToTender(Professions.BUILDER, 1);
         library.addProfessionToTender(Professions.DRIVER, 2);
         library.addProfessionToTender(Professions.FINISHER, 1);
-        library.addBrigadesToTender(trest);
-        library.addBrigadesToTender(telecom);
-        library.addBrigadesToTender(titan);
+        library.addBrigadeToTender(trest);
+        library.addBrigadeToTender(telecom);
+        library.addBrigadeToTender(titan);
 
-        System.out.println(library.chooseBrigadeForTender().toString());
+
+        System.out.println(library.chooseMostSuitableBrigade().toString());
 
 
     }

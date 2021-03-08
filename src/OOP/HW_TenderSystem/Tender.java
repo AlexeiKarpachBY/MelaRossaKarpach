@@ -1,58 +1,48 @@
 package OOP.HW_TenderSystem;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class Tender {
 
     private final Map<Professions, Integer> professions = new HashMap<>();
-    private final Integer salaryLimit;
     private final List<Brigade> tenderBrigades = new ArrayList<>();
 
-    public Tender(int salaryLimit) {
-        this.salaryLimit = salaryLimit;
-    }
 
     public Map<Professions, Integer> getProfessions() {
         return professions;
     }
+
     public List<Brigade> getTenderBrigades() {
         return tenderBrigades;
     }
-    public Integer getSalaryLimit() {
-        return salaryLimit;
-    }
+
 
     public void addProfessionToTender(Professions profession, Integer professionLimit) {
         this.professions.put(profession, professionLimit);
     }
-    public void addBrigadesToTender(Brigade brigade) {
+
+    public void addBrigadeToTender(Brigade brigade) {
         this.tenderBrigades.add(brigade);
     }
 
-    public Brigade chooseBrigadeForTender() {
-        Brigade brigadeForSigning = new Brigade();
-        int profitablePrice = 0;
-        for (Brigade brigade : getTenderBrigades()) {
-            if (salaryMatch(brigade) && professionsMatch(brigade)) {
-                brigadeForSigning = brigade;
-                profitablePrice = brigade.getBrigadeSalary();
+    public Brigade chooseMostSuitableBrigade() {
+        Brigade brigade = new Brigade();
+        removeInappropriateBrigades();
+        try {
+            if (tenderBrigades.isEmpty()) {
+                throw new TenderFailedException("There are no suitable brigades");
             }
+            tenderBrigades.sort(Comparator.comparing(Brigade::getBrigadeSalary));
+            brigade = tenderBrigades.get(0);
+
+        } catch (TenderFailedException e) {
+            e.printStackTrace();
         }
-        return brigadeForSigning;
+        return brigade;
     }
-
-    private boolean salaryMatch(Brigade brigade) {
-        int brigadeSalary = 0;
-
-        for (Worker worker : brigade.getBrigade()) {
-            brigadeSalary = brigadeSalary + worker.getSalary();
-        }
-
-        return brigadeSalary <= getSalaryLimit();
+    private void removeInappropriateBrigades() {
+        tenderBrigades.removeIf(brigade -> !professionsMatch(brigade));
     }
     private boolean professionsMatch(Brigade brigade) {
         boolean brigadeStatus = false;
@@ -72,7 +62,6 @@ public class Tender {
     }
 
 
-
     @Override
     public int hashCode() {
         return super.hashCode();
@@ -85,7 +74,10 @@ public class Tender {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Tender{" +
+                "professions=" + professions +
+                ", tenderBrigades=" + tenderBrigades +
+                '}';
     }
 }
 
