@@ -14,7 +14,6 @@ public class Brigade {
     public List<Worker> getBrigade() {
         return brigade;
     }
-
     public int getBrigadeSalary() {
         return brigadeSalary;
     }

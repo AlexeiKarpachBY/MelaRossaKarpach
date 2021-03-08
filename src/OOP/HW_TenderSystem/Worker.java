@@ -1,6 +1,6 @@
 package OOP.HW_TenderSystem;
 
-import java.util.Enumeration;
+
 import java.util.HashSet;
 
 public class Worker {
@@ -23,15 +23,12 @@ public class Worker {
     public String getName() {
         return name;
     }
-
     public int getSalary() {
         return salary;
     }
-
     public HashSet<Professions> getProfession() {
         return profession;
     }
-
     public void addProfession(Professions professions) {
         this.profession.add(professions);
     }
@@ -43,5 +40,15 @@ public class Worker {
                 ", salary=" + salary +
                 ", profession=" + profession +
                 '}';
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }

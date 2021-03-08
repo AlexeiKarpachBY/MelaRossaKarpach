@@ -4,8 +4,8 @@ public enum Professions {
     BUILDER,
     INSTALLER,
     FINISHER,
-    DIRECTOR,
-    DRIVER;
+    DRIVER,
+    DIRECTOR;
 
 
 }

@@ -37,21 +37,14 @@ public class Tender {
         Brigade brigadeForSigning = new Brigade();
         int profitablePrice = 0;
         for (Brigade brigade : getTenderBrigades()) {
-            if (verificationTenderRequirements(brigade) && brigade.getBrigadeSalary() < getSalaryLimit()) {
+            if (salaryMatch(brigade) && professionsMatch(brigade)) {
                 brigadeForSigning = brigade;
                 profitablePrice = brigade.getBrigadeSalary();
             }
         }
         return brigadeForSigning;
     }
-    public boolean verificationTenderRequirements(Brigade brigade) {
-        boolean status;
 
-        status = salaryMatch(brigade);
-        status = professionsMatch(brigade);
-
-        return status;
-    }
     private boolean salaryMatch(Brigade brigade) {
         int brigadeSalary = 0;
 
