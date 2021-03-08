@@ -6,6 +6,7 @@ import java.util.List;
 public class Brigade {
 
     private final List<Worker> brigade = new ArrayList<>();
+    private int brigadeSalary = 0;
 
     public Brigade() {
     }
@@ -14,8 +15,13 @@ public class Brigade {
         return brigade;
     }
 
+    public int getBrigadeSalary() {
+        return brigadeSalary;
+    }
+
     public void addWorkerToBrigade(Worker worker) {
         this.brigade.add(worker);
+        this.brigadeSalary += worker.getSalary();
     }
 
     @Override
@@ -30,6 +36,9 @@ public class Brigade {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Brigade{" +
+                "brigade=" + brigade +
+                ", brigadeSalary=" + brigadeSalary +
+                '}';
     }
 }
